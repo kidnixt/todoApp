@@ -1,0 +1,21 @@
+.metrics {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.metrics row:first-child {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.metrics .card-body {
+}
+
+h5.card-title {
+  color: #606060;
+}
+
+span.badge {
+  color: white !important;
+  font-size: 22px;
+}

@@ -1,0 +1,17 @@
+section.signup {
+  margin-top: 5%;
+  text-align: center;
+}
+
+section.signup > div.card {
+  padding: 20px !important;
+}
+
+section.signup label {
+  font-size: 14px;
+  color: #606060;
+}
+
+section.signup img {
+  margin: 0 auto;
+}

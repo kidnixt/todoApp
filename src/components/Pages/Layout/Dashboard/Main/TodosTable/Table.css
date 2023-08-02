@@ -1,0 +1,9 @@
+th,
+td {
+  color: #606060;
+  font-size: 14px;
+  text-align: center;
+}
+tr.strike {
+  background: gainsboro;
+}
