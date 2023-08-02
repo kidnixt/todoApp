@@ -2,12 +2,13 @@ import 'bootstrap-css-only'
 import { useState } from 'react'
 import Layout from '../Pages/Layout/Layout'
 import Login from '../Pages/Login'
+import { useSelector } from 'react-redux'
 
 const App = () => {
-  const [userLogged, setUser] = useState(null)
+  //const [userLogged, setUser] = useState(null)
+  const userLogged = useSelector((state) => state.user.user)
   const [todos, setTodos] = useState([])
-  const onLogin = user => setUser(user)
-  const onLogout = () => setUser(null)
+  const onLogout = () => {}
 
   const onAddTodo = todo => {
     setTodos([...todos, todo])
@@ -42,7 +43,7 @@ const App = () => {
           user={userLogged}
         />
       ) : (
-        <Login onLogin={onLogin} />
+        <Login/>
       )}
     </div>
   )

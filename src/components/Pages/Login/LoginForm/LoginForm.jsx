@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react'
 import Alert from '../../../UI/Alert'
 import Button from '../../../UI/Button/Button'
+import { setLoginUser } from '../../../../app/slices/userSlice'
+import { useDispatch } from 'react-redux'
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = () => {
   const [message, setMessage] = useState('')
   const [messageClass, setClass] = useState('')
   const [btnDisabled, setDisable] = useState(false)
@@ -10,6 +12,7 @@ const LoginForm = ({ onLogin }) => {
 
   const inputUserName = useRef()
   const inputPassword = useRef()
+  const dispatch = useDispatch()
 
   const isNotEmpty = val => val.length > 0
 
@@ -30,7 +33,8 @@ const LoginForm = ({ onLogin }) => {
         setBtnCTA('Iniciar sesión')
         setClass('success')
         setMessage('Inicio de sesión correcto')
-        onLogin(user)
+        //delegamos el disparo de la accion a redux
+        dispatch(setLoginUser(user))
       }, 1000)
     } else {
       setDisable(false)
