@@ -2,7 +2,7 @@ import './Dashboard.css'
 import Main from './Main'
 import Metrics from './Metrics/Metrics'
 
-const Dashboard = ({ onAddTodo, onComplete, onDeleteTodo, todos, user }) => {
+const Dashboard = ({ onAddTodo, onComplete, onDeleteTodo, todos }) => {
   return (
     <>
       <Metrics todos={todos} />
@@ -13,7 +13,6 @@ const Dashboard = ({ onAddTodo, onComplete, onDeleteTodo, todos, user }) => {
             onAddTodo={onAddTodo}
             onComplete={onComplete}
             onDeleteTodo={onDeleteTodo}
-            user={user}
             todos={todos}
           />
         </div>

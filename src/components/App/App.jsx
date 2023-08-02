@@ -38,7 +38,6 @@ const App = () => {
           onComplete={onComplete}
           onDeleteTodo={onDeleteTodo}
           todos={todos}
-          user={userLogged}
         />
       ) : (
         <Login/>

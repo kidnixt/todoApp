@@ -4,8 +4,7 @@ const Layout = ({
   onAddTodo,
   onComplete,
   onDeleteTodo,
-  todos,
-  user
+  todos
 }) => {
   return (
     <div className='container-fluid dashboard'>
@@ -16,7 +15,6 @@ const Layout = ({
           onComplete={onComplete}
           onDeleteTodo={onDeleteTodo}
           todos={todos}
-          user={user}
         />
       </div>
     </div>

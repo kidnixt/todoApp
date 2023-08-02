@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react'
 import * as validator from '../../../../../../utils/validate'
 import Button from '../../../../../UI/Button/Button'
+import { useSelector } from 'react-redux'
 
-const TodosCreateForm = ({ onAddTodo, user }) => {
+const TodosCreateForm = ({ onAddTodo }) => {
+  const user = useSelector(state => state.user.user)
   const [btnDisabled, setDisable] = useState(false)
   const inputRef = useRef()
 

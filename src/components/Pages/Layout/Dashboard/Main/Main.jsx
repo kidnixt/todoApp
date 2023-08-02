@@ -2,12 +2,12 @@ import Alert from '../../../../UI/Alert'
 import CreateForm from './TodosCreateForm'
 import TodosTable from './TodosTable'
 
-const Main = ({ onAddTodo, onComplete, onDeleteTodo, user, todos }) => {
+const Main = ({ onAddTodo, onComplete, onDeleteTodo, todos }) => {
   return (
     <main>
       <div className='grid'>
         <div className='g-col-6'>
-          <CreateForm onAddTodo={onAddTodo} user={user} />
+          <CreateForm onAddTodo={onAddTodo} />
         </div>
         <br />
         <div className='g-col-6'>
