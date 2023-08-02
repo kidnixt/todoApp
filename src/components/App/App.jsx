@@ -8,7 +8,6 @@ const App = () => {
   //const [userLogged, setUser] = useState(null)
   const userLogged = useSelector((state) => state.user.user)
   const [todos, setTodos] = useState([])
-  const onLogout = () => {}
 
   const onAddTodo = todo => {
     setTodos([...todos, todo])
@@ -35,7 +34,6 @@ const App = () => {
     <div className='App'>
       {userLogged ? (
         <Layout
-          onLogout={onLogout}
           onAddTodo={onAddTodo}
           onComplete={onComplete}
           onDeleteTodo={onDeleteTodo}

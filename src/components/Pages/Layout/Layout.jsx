@@ -1,7 +1,6 @@
 import Dashboard from './Dashboard/Dashboard'
 import Header from './Dashboard/Header'
 const Layout = ({
-  onLogout,
   onAddTodo,
   onComplete,
   onDeleteTodo,
@@ -10,7 +9,7 @@ const Layout = ({
 }) => {
   return (
     <div className='container-fluid dashboard'>
-      <Header onLogout={onLogout} />
+      <Header />
       <div className='col-9 mx-auto'>
         <Dashboard
           onAddTodo={onAddTodo}
