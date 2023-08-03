@@ -1,5 +1,8 @@
 import './Metrics.css'
-const Metrics = ({ todos }) => {
+import { useSelector } from 'react-redux'
+const Metrics = () => {
+
+  const todos = useSelector(state => state.todos.todos)
   const _calculateCompleted = () => {
     return todos.filter(todo => todo.completed).length
   }

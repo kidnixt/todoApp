@@ -2,8 +2,11 @@ import { useRef, useState } from 'react'
 import * as validator from '../../../../../../utils/validate'
 import Button from '../../../../../UI/Button/Button'
 import { useSelector } from 'react-redux'
+import { addTodo } from '../../../../../../app/slices/todosSlice'
+import { useDispatch } from 'react-redux'
 
-const TodosCreateForm = ({ onAddTodo }) => {
+const TodosCreateForm = () => {
+  const dispatch = useDispatch()
   const user = useSelector(state => state.user.user)
   const [btnDisabled, setDisable] = useState(false)
   const inputRef = useRef()
@@ -25,7 +28,7 @@ const TodosCreateForm = ({ onAddTodo }) => {
         completed: false,
         userId: user.id
       }
-      onAddTodo(newTodo)
+      dispatch(addTodo(newTodo))
       _resetInputValue()
     }
     setDisable(false)
