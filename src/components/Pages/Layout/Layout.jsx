@@ -1,6 +1,6 @@
 import Dashboard from './Dashboard/Dashboard'
 import Header from './Dashboard/Header'
-const Layout = ({}) => {
+const Layout = () => {
   return (
     <div className='container-fluid dashboard'>
       <Header />

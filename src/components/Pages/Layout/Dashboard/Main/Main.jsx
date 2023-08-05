@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector'
 const Main = () => {
   const todos = useSelector(state => state.todos.todos)
 
+
   return (
     <main>
       <div className='grid'>

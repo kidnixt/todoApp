@@ -1,12 +1,19 @@
+import { useDispatch } from 'react-redux'
 import Button from '../../../../../../UI/Button/Button'
+import { completeTodo, deleteTodo } from '../../../../../../../app/slices/todosSlice'
 
-const TodoRow = ({ todo, onComplete, onDeleteTodo }) => {
+
+
+const TableItemRow = ({todo}) => {
+
+  const dispatch = useDispatch()
+
   const onHandleDelete = () => {
-    onDeleteTodo(todo.id)
+    dispatch(deleteTodo(todo.id))
   }
 
   const onHandleComplete = () => {
-    onComplete(todo.id)
+    dispatch(completeTodo(todo.id))
   }
   return (
     <tr className={todo.completed ? 'strike' : ''}>
@@ -30,4 +37,4 @@ const TodoRow = ({ todo, onComplete, onDeleteTodo }) => {
   )
 }
 
-export default TodoRow
+export default TableItemRow

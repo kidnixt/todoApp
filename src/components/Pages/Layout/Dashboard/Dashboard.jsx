@@ -9,8 +9,7 @@ const Dashboard = () => {
       <h5>TO-DO LIST</h5>
       <div className='card'>
         <div className='card-body'>
-          <Main
-          />
+          <Main/>
         </div>
       </div>
     </>

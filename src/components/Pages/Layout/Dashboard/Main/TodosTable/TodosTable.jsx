@@ -1,7 +1,7 @@
 import './Table.css'
 import TableItemRow from './TodoRow'
 
-const TodosTable = ({ todos, onDeleteTodo, onComplete }) => {
+const TodosTable = ({ todos }) => {
   return (
     <table className='table table-hover'>
       <thead>
@@ -16,8 +16,6 @@ const TodosTable = ({ todos, onDeleteTodo, onComplete }) => {
         {todos.map(todo => (
           <TableItemRow
             todo={todo}
-            onDeleteTodo={onDeleteTodo}
-            onComplete={onComplete}
           />
         ))}
       </tbody>
