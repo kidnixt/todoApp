@@ -3,15 +3,8 @@ import React from 'react'
 import logo from '../../../../logo.svg'
 import './Header.css'
 import Logout from './Logout'
-import { setLogoutUser } from '../../../../../app/slices/userSlice'
-import { useDispatch } from 'react-redux'
 
 const Header = () => {
-  const dispatch = useDispatch();
-
-  const onLogout = () => {
-    dispatch(setLogoutUser())
-  }
   return (
     <header className='App-header'>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
@@ -38,7 +31,7 @@ const Header = () => {
             React to-do app
           </a>
           <div className='navbar-nav mr-auto mt-2 mt-lg-0'></div>
-          <Logout onLogout = {onLogout} />
+          <Logout/>
         </div>
       </nav>
     </header>

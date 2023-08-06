@@ -1,7 +1,18 @@
-const Logout = ({ onLogout }) => {
+import { useDispatch } from "react-redux"
+import { setLogoutUser } from '../../../../../../app/slices/userSlice'
+
+const Logout = () => {
+
+  const dispatch = useDispatch()
+
+  const onLogout = () => {
+    dispatch(setLogoutUser())
+  }
+
   const handleLogout = () => {
     onLogout()
   }
+    
   return (
     <form className='form-inline my-2 my-lg-0'>
       <button
