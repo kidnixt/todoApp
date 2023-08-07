@@ -3,6 +3,11 @@ import Alert from '../../../UI/Alert'
 import Button from '../../../UI/Button/Button'
 import { setLoginUser } from '../../../../app/slices/userSlice'
 import { useDispatch } from 'react-redux'
+import { useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+
+
 
 const LoginForm = () => {
   const [message, setMessage] = useState('')
@@ -13,6 +18,9 @@ const LoginForm = () => {
   const inputUserName = useRef()
   const inputPassword = useRef()
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+
 
   const isNotEmpty = val => val.length > 0
 
@@ -34,8 +42,9 @@ const LoginForm = () => {
         setClass('success')
         setMessage('Inicio de sesión correcto')
         //delegamos el disparo de la accion a redux
-        dispatch(setLoginUser(user))
+        dispatch(setLoginUser(user));
       }, 1000)
+
     } else {
       setDisable(false)
       setBtnCTA('Iniciar sesión')
@@ -52,6 +61,16 @@ const LoginForm = () => {
       setMessage('')
     }, 3000)
   }
+
+  const user = useSelector(state => state.user.user)
+
+  useEffect(() => {
+    if (user) {
+      navigate('/layout')
+    }
+  }, [user, navigate])
+
+
   return (
     <>
       <form>
@@ -78,6 +97,7 @@ const LoginForm = () => {
       </form>
     </>
   )
+
 }
 
 export default LoginForm

@@ -20,7 +20,7 @@ const Main = () => {
         
       } catch (error){}
     })() //IIFE
-  }, [])
+  }, [dispatch])
 
 
     return (

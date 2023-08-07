@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCities, setDptos } from '../../../../app/slices/locationSlice'
-import { getCities, getDptos } from '../../../../services/crypto'
 import Alert from '../../../UI/Alert'
 import Button from '../../../UI/Button/Button'
 import Select from '../../../UI/Select'
@@ -19,21 +17,7 @@ const SignUpForm = () => {
   const cities = useSelector(state => state.location.cities)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    try {
-      ;(async () => {
-        const { departamentos } = await getDptos()
-        dispatch(setDptos(departamentos))
-      })()
-    } catch (error) {}
-  }, [dispatch])
 
-  const _onHandleDptoChange = async id => {
-    try {
-      const { ciudades } = await getCities(id)
-      dispatch(setCities(ciudades))
-    } catch (error) {}
-  }
 
   return (
     <>
@@ -51,9 +35,6 @@ const SignUpForm = () => {
         <br />
         <input className='form-control' type='password' ref={inputPassword} />
 
-        <br />
-        <label>Seleccionar Departamento</label>
-        <Select options={departamentos} onHandleChange={_onHandleDptoChange} />
         <br />
         <label>Seleccionar Ciudad</label>
         <Select options={cities} />

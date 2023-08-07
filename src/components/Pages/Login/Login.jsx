@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../../logo.svg'
 import './Login.css'
 import LoginForm from './LoginForm'
@@ -12,6 +13,7 @@ const Login = () => {
           <section className='card-body'>
             <LoginForm/>
           </section>
+          <Link to = {'/signup'}>No tienes cuenta?</Link>
         </div>
       </section>
     </>

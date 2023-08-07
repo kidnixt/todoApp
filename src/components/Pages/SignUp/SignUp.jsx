@@ -10,7 +10,7 @@ const SignUp = () => {
           <img src={logo} width='70' height='70' alt='Logo' />
           <h3>Sign up</h3>
           <section className='card-body'>
-            <SignUpForm />
+            <h1>No existe</h1>
           </section>
         </div>
       </section>
